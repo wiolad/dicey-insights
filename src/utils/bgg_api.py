@@ -6,11 +6,11 @@ import time
 import xml.etree.ElementTree as ET
 
 
-def use_bgg_api():
+def use_bgg_api(game_name):
     bgg = BGGClient()
-    game = bgg.games("Monopoly")
-    st.write(game)  # 1935
-    st.write(game[1].rating_average)  # 4.36166
+    game = bgg.games(game_name)
+    st.write("Rating average", game[0].rating_average)
+    st.write("Year", game[0].year)
 
 
 def use_bgg_api_directly(mindate = '2024-01-01', maxdate = '2024-02-01'):

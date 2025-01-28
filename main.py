@@ -1,13 +1,10 @@
-# This is a sample Python script.
 import streamlit as st
 import pandas as pd
-from src.utils.bgg_api import use_bgg_api_directly, use_bgg_api
+from src.utils.bgg_api import use_bgg_api
 
 
 def main():
     st.title(' :game_die:  Dicey Insights')
-    st.text('This page uses bgg-api by SukiCZ')
-    #use_bgg_api()
     bg_data = pd.read_csv("datasets/board_games.csv")
 
     vars_dict = {

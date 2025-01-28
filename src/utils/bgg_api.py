@@ -1,6 +1,5 @@
 import streamlit as st
 from boardgamegeek import BGGClient
-import sys
 import requests
 import time
 import xml.etree.ElementTree as ET
@@ -11,6 +10,7 @@ def use_bgg_api(game_name):
     game = bgg.games(game_name)
     st.write("Rating average", game[0].rating_average)
     st.write("Year", game[0].year)
+    st.image(game[0].image)
 
 
 def use_bgg_api_directly(mindate = '2024-01-01', maxdate = '2024-02-01'):
